@@ -4,29 +4,21 @@
     <section id="header" class="header-container">
       <HeaderPart />
     </section>
-    <SearchPartners />
-    <HomeCards />
+
+    <section id="mainI" class="mainI-container">
+      <MainIPart />
+    </section>
   </div>
 </template>
 
 <script>
 import HeaderPart from "@/components/parts/HeaderPart.vue";
-import SearchPartners from "@/components/SearchPartners.vue";
-import HomeCards from "@/components/HomeCards.vue";
+import MainIPart from "@/components/parts/MainIPart.vue";
 
 export default {
   components: {
     HeaderPart,
-    SearchPartners,
-    HomeCards,
+    MainIPart,
   },
 };
 </script>
-
-<style>
-
-body {
-  overflow-x: hidden;
-}
-
-</style>
