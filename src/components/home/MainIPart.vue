@@ -1,6 +1,6 @@
 <template>
   <div class="mainI-container">
-    <div class="container my-3 searchUni">
+    <div class="mb-4 searchUni">
       <div class="text-center">
         <h3 class="fw-bold">Encontre uma unidade Santé</h3>
         <h5 class="text-muted">Onde será mais perto para você?</h5>
@@ -14,20 +14,20 @@
               placeholder="Digite o nome da cidade ou unidade"
               aria-label="Pesquisar unidade"
             />
-            <button class="btn btn-primary" type="button">Buscar</button>
+            <button class="btn" type="button">Buscar</button>
           </div>
           <div class="text-center mt-3">
-            <button class="btn btn-outline-secondary btn-sm" type="button">
+            <button class="btn btn-sm" type="button">
               Usar minha localização
             </button>
           </div>
         </div>
       </div>
     </div>
-    <div class="container my-5 homeCards">
+    <div class="container col-12 my-5 homeCards">
       <div class="row">
         <!-- Card de Resultados de Exames -->
-        <div class="col-md-6">
+        <div class="col-md-6 mb-4">
           <div class="card h-100 shadow-sm">
             <div
               class="card-body d-flex flex-column justify-content-between align-items-center text-center"
@@ -38,20 +38,20 @@
                 class="exames-img"
               />
               <div class="card-info">
-                  <h5 class="card-title">Resultados de Exames</h5>
-                  <p class="card-text">
-                    Consulte seus resultados de exames online de forma rápida e
-                    segura.
-                  </p>
-                  <a href="#" class="btn btn-primary mt-auto">
-                    Consultar Resultados
-                  </a>
+                <h5 class="card-title">Resultados de Exames</h5>
+                <p class="card-text">
+                  Consulte seus resultados de exames online de forma rápida e
+                  segura.
+                </p>
+                <a href="#" class="btn btn-card mt-auto">
+                  Consultar Resultados
+                </a>
               </div>
             </div>
           </div>
         </div>
         <!-- Card de Planos de Saúde -->
-        <div class="col-md-6">
+        <div class="col-md-6 mb-4">
           <div class="card h-100 shadow-sm">
             <div
               class="card-body d-flex flex-column justify-content-between align-items-center text-center"
@@ -62,14 +62,13 @@
                 class="card-img"
               />
               <div class="card-info">
-                  <h5 class="card-title">Planos de Saúde</h5>
-                  <p class="card-text">
-                    Verifique a cobertura do seu plano de saúde e obtenha
-                    informações detalhadas.
-                  </p>
-                  <a href="#" class="btn btn-success mt-auto">
-                    Verificar Cobertura
-                  </a>
+                <h5 class="card-title">Planos de Saúde</h5>
+                <p class="card-text">
+                  Verifique o credenciamento do seu plano de saúde.
+                </p>
+                <a href="#" class="btn btn-card mt-auto">
+                  Verificar Cobertura
+                </a>
               </div>
             </div>
           </div>
@@ -89,52 +88,152 @@ export default {
 .mainI-container {
   width: 100vw;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.container .searchUni {
-  height: 40vh;
+.searchUni {
+  height: 30vh;
+  background-color: var(--cor7);
+  padding: 15px;
 }
 
 .container .homeCards {
-  height: 60vh;
+  height: 70vh;
 }
 
-h2 {
-  font-weight: bold;
+.searchUni h3,
+.searchUni h5 {
+  color: var(--cor9);
 }
 
-h4 {
-  font-weight: 400;
-  color: #555;
+.searchUni input::placeholder {
+  font-size: 0.7rem;
+}
+
+.btn {
+  background-color: var(--cor9);
+  color: var(--cor7);
+}
+
+.btn:hover {
+  background-color: var(--cor5);
+  color: var(--cor9);
+}
+
+.btn-card {
+  width: 200px;
+  height: 40px;
 }
 
 .card {
-  border-radius: 15px;
+  border: 5px solid var(--cor7);
+  border-radius: 10px;
 }
 
 .exames-img {
-  width: 350px;
-  height: 220px;
-  margin: 20px 0;
+  max-width: 90%;
+  max-height: 45%;
+  margin: 45px 0 10px;
+  box-shadow: 0 0 5px var(--cor5);
   border-radius: 10px;
 }
 
 .card-img {
-  width: 400px;
-  height: 200px;
-  border: 2px solid var(--cor5);
-  box-shadow: 0 0 5px var(--cor3);
+  max-width: 350px;
+  max-height: 160px;
+  box-shadow: 0 0 5px var(--cor5);
   border-radius: 10px;
   margin: 35px 0 10px;
 }
 
-.card-title {
+h5.card-title {
   font-weight: bold;
   font-size: 1.5rem;
+  color: var(--cor9);
 }
 
-.card-text {
+p.card-text {
   font-size: 1rem;
-  color: #555;
+  color: var(--cor9);
+}
+
+@media (max-width: 890px) {
+  .searchUni {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .searchUni h3 {
+    margin-bottom: 30px;
+    font-size: 2rem;
+  }
+  .container.col-12.my-5.homeCards {
+    margin-top: 0 !important;
+  }
+  .homeCards .row {
+    display: grid !important;
+    grid-template-columns: 1fr;
+  }
+  .col-md-6.mb-4 {
+    margin: auto;
+  }
+}
+
+@media (max-width: 799px) {
+  .searchUni {
+    height: 25vh;
+    padding: 5px;
+    margin-bottom: 0 !important;
+  }
+  .container .homeCards {
+    height: 75vh;
+  }
+  .searchUni h3 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+  }
+  .searchUni h5 {
+    font-size: 0.8rem;
+    margin-bottom: 0;
+  }
+  .btn {
+    font-size: 0.8rem;
+  }
+  .col-md-6 {
+    margin-bottom: 0 !important;
+  }
+  .card {
+    border: none;
+  }
+  .card-body {
+    padding: 8px;
+  }
+  .card img {
+    margin: 3px auto;
+  }
+  h5.card-title {
+    font-weight: bold;
+    font-size: 1rem;
+    margin-top: 10px;
+  }
+
+  p.card-text {
+    font-size: 0.8rem;
+  }
+  .exames-img {
+    max-width: 70%;
+    max-height: 28%;
+  }
+
+  .card-img {
+    max-width: 200px;
+    max-height: 110px;
+  }
+  .btn-card {
+    width: auto;
+    height: auto;
+  }
 }
 </style>

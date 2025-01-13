@@ -28,6 +28,9 @@
       </div>
 
       <div id="main-banner">
+        <div class="slogan-header">
+          <h3>Sua jornada de bem-estar começa aqui.</h3>
+        </div>
         <div class="logomarca">
           <div class="banner-title">
             <span>R</span>
@@ -44,9 +47,6 @@
           <div class="pulsing-cross">
             <img src="/img/farmacia.png" alt="Cruz" />
           </div>
-        </div>
-        <div class="slogan-header">
-          <h3>Sua jornada de bem-estar começa aqui.</h3>
         </div>
       </div>
     </div>
@@ -121,8 +121,6 @@ export default {
 </script>
 
 <style scoped>
-@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap");
-
 .header-container {
   width: 100vw;
   height: 100vh;
@@ -198,29 +196,29 @@ export default {
 
 .banner-content button {
   padding: 10px 20px;
-  border: 1px solid var(--cor4);
+  border: 1px solid var(--cor9);
   border-radius: 20px;
-  background-color: var(--cor4);
-  color: var(--cor1);
+  background-color: var(--cor9);
+  color: var(--cor5);
   cursor: pointer;
   font-size: 1rem;
   transition: background-color 0.3s;
 }
 
 .banner-content button:hover {
-  background-color: var(--cor0);
-  color: var(--cor6);
-  border: 1px solid var(--cor0);
-  box-shadow: 1px 1px 10px var(--cor3);
+  background-color: var(--cor5);
+  color: var(--cor9);
+  border: 1px solid var(--cor5);
+  box-shadow: 1px 1px 10px var(--cor5);
 }
 
 .prev,
 .next {
   position: absolute;
   top: 50%;
-  background-color: var(--cor4);
-  color: var(--cor1);
-  border: 1px solid var(--cor4);
+  background-color: var(--cor9);
+  color: var(--cor5);
+  border: 1px solid var(--cor9);
   width: 50px;
   height: 50px;
   cursor: pointer;
@@ -242,10 +240,10 @@ export default {
 
 .prev:hover,
 .next:hover {
-  background-color: var(--cor0);
-  color: var(--cor6);
-  border: 1px solid var(--cor0);
-  box-shadow: 1px 1px 10px var(--cor3);
+  background-color: var(--cor5);
+  color: var(--cor9);
+  border: 1px solid var(--cor5);
+  box-shadow: 1px 1px 10px var(--cor5);
 }
 
 #main-banner {
@@ -304,7 +302,7 @@ export default {
   margin-right: 20px;
   font-family: "Comfortaa", serif;
   font-size: 6rem;
-  color: #006f6d;
+  color: var(--cor8);
   display: flex;
   gap: 5px;
 }
@@ -361,7 +359,49 @@ export default {
 
 .slogan-header h3 {
   font-family: "Comfortaa", serif;
-  font-size: 2.5rem;
-  color: #004c4b;
+  font-size: 2.2rem;
+  color: var(--cor9);
+}
+
+@media (max-width: 799px) {
+  .banner-content h1 {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+  .banner-content p {
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+  }
+  .banner-content button {
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+  }
+  .prev,
+  .next {
+    top: 80%;
+    width: 30px;
+    height: 30px;
+    font-size: 1.2rem;
+  }
+  .prev {
+    left: 10px;
+  }
+
+  .next {
+    right: 10px;
+  }
+
+  .slogan-header h3 {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+  .banner-title {
+    font-size: 2.5rem;
+  }
+  .pulsing-cross {
+    width: 50px;
+    height: 50px;
+  }
 }
 </style>

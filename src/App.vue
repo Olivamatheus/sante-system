@@ -20,22 +20,29 @@ export default {
 </script>
 
 <style>
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap");
 
 :root {
-  --cor0: #EAFFC9;
-  --cor1: #CDFF83;
-  --cor2: #2EFF56;
-  --cor3: #ADFF2F;
+  --cor0: #eaffc9;
+  --cor1: #cdff83;
+  --cor2: #2eff56;
+  --cor3: #adff2f;
   --cor4: #243509;
-  --cor5: #40E0D0;
-  --cor6: #afdbd8;
-  --cor7: #0E322E;
-
-
+  --cor5: #00ffe5;
+  --cor6: #40e0d0;
+  --cor7: #afdbd8;
+  --cor8: #00665c;
+  --cor9: #0e322e;
 }
 
 body {
   overflow-x: hidden;
 }
 
+* {
+  font-family: "Montserrat", serif;
+  -webkit-tap-highlight-color: transparent;
+  tap-highlight-color: transparent;
+}
 </style>

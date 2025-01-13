@@ -3,7 +3,7 @@
     <div class="container-fluid">
       <!-- Logo -->
       <a class="navbar-brand" href="#">
-        <img src="/img/logo.png" alt="Logo Sys Santé" width="120" />
+        <img src="/img/logo-p.png" alt="Logo Sys Santé" width="120" />
       </a>
 
       <!-- Botão para versão mobile -->
@@ -16,7 +16,7 @@
         aria-expanded="false"
         aria-label="Toggle navigation"
       >
-        <span class="navbar-toggler-icon"></span>
+        <i class="bi bi-three-dots"></i>
       </button>
 
       <!-- Links da Navbar -->
@@ -68,22 +68,101 @@ export default {
 </script>
 
 <style scoped>
-
 .navbar {
   position: fixed;
   width: 100%;
   height: 60px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
+  overflow: visible;
   z-index: 99;
 }
 
 .nav-link {
   font-weight: 500;
-  color: #333;
+  color: var(--cor9);
 }
 
 .nav-link:hover {
-  color: #0056b3;
+  color: var(--cor6);
+}
+
+@media (max-width: 890px) {
+  .navbar-toggler {
+    border: none;
+  }
+
+  button i.bi {
+    color: var(--cor8);
+    font-size: 35px;
+  }
+
+  button i.bi:hover {
+    color: var(--cor6);
+  }
+
+
+  .navbar-collapse {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 210px;
+    height: auto;
+    background-color:white;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    z-index: 105;
+  }
+
+  .navbar-collapse.show {
+    display: flex !important;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+  }
+
+  .nav-link {
+    padding: 3px 8px;
+  }
+
+  .dropdown-menu {
+    position: static;
+    background-color: var(--cor7);
+    width: 100%;
+    margin: 0;
+    padding: 3px;
+    border: none;
+    box-shadow: none;
+  }
+  a.dropdown-item {
+    background-color: var(--cor7);
+  }
+  a.dropdown-item:hover {
+    color: var(--cor6);
+  }
+}
+
+@media (max-width: 799px) {
+  .navbar {
+    height: 40px;
+    padding: 0;
+  }
+  .navbar-brand img {
+    width: 80px;
+    height: 20px;
+  }
+  button i.bi {
+    color: var(--cor8);
+    font-size: 25px;
+  }
+  .navbar-collapse {
+    top: 40px;
+    width: 170px;
+  }
+   .nav-link {
+    font-size: 0.8rem;
+  }
+  a.dropdown-item {
+    font-size: 0.8rem;
+  }
 }
 </style>
