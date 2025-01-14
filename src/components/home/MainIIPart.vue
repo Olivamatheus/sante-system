@@ -124,7 +124,7 @@ export default {
 
 .home-servicesII {
   width: 100vw;
-  height: 60vh;
+  height: 65vh;
   background-color: var(--cor7);
   padding: 15px;
 }
