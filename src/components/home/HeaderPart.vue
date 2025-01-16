@@ -15,7 +15,9 @@
               <h1>{{ banner.title }}</h1>
               <p>{{ banner.subtitle }}</p>
               <p>{{ banner.description }}</p>
-              <button>{{ banner.buttonText }}</button>
+              <button @click="handleButtonClick(banner.buttonText)">
+                {{ banner.buttonText }}
+              </button>
             </div>
           </div>
           <button class="prev" @click="prevSlide">
@@ -52,7 +54,6 @@
     </div>
   </div>
 </template>
-
 <script>
 export default {
   name: "HeaderPart",
@@ -112,10 +113,17 @@ export default {
       this.currentIndex =
         (this.currentIndex - 1 + this.banners.length) % this.banners.length;
     },
-  },
-  beforeUnmount() {
-    // Usando o lifecycle atualizado
-    this.stopCarousel();
+    handleButtonClick(buttonText) {
+      if (buttonText === "Marcar Consulta") {
+        this.$router.push("/consultas");
+      } else if (buttonText === "Marcar Exame") {
+        this.$router.push("/exames");
+      } else if (buttonText === "Conheça Planos") {
+        this.$router.push("/planos");
+      } else if (buttonText === "Ver Mais") {
+        this.$router.push("/urgencias");
+      }
+    },
   },
 };
 </script>

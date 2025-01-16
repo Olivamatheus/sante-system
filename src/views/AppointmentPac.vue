@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- Scheduling Appointment Section -->
-    <section id="header" class="header-container">
+    <section id="main" class="main-container">
       <MainScheAppo />
     </section>
   </div>

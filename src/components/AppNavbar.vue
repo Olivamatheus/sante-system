@@ -2,9 +2,9 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
       <!-- Logo -->
-      <a class="navbar-brand" href="#">
+      <router-link class="navbar-brand" to="/">
         <img src="/img/logo-p.png" alt="Logo Sys Santé" width="120" />
-      </a>
+      </router-link>
 
       <!-- Botão para versão mobile -->
       <button
@@ -47,7 +47,7 @@
             <a class="nav-link" href="#">Especialidades</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Exames e Procedimentos</a>
+            <router-link class="nav-link" to="/exames">Exames e Procedimentos</router-link>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Resultados de Exames</a>

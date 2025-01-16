@@ -40,18 +40,18 @@
   </div>
 </template>
 <script>
-import StepSpecialty from "./steps/StepSpecialty.vue";
+import StepSelectExms from "./steps/StepSelectExms.vue";
 import StepLocation from "./steps/StepLocation.vue";
 import StepPatient from "./steps/StepPatient.vue";
 import StepPayment from "./steps/StepPayment.vue";
 import StepPatientData from "./steps/StepPatientData.vue";
 export default {
-  name: "MainScheAppo",
+  name: "MainScheExms",
   data() {
     return {
       currentStep: 1,
       steps: [
-        { label: "Especialidade / Médico", component: StepSpecialty },
+        { label: "Exame / Procedimento", component: StepSelectExms },
         { label: "Local", component: StepLocation },
         { label: "Paciente", component: StepPatient },
         { label: "Pagamento", component: StepPayment },

@@ -9,11 +9,13 @@
         id="searchLocation"
         placeholder="Ex.: Estado ou Unidade"
         v-model="location"
+        @focus="showSuggestions = true"
+        @blur="hideSuggestions"
       />
-      <ul class="list-group mt-2" v-if="suggestions.length">
+      <ul class="list-group mt-2" v-if="showSuggestions">
         <li
           class="list-group-item"
-          v-for="suggestion in suggestions"
+          v-for="suggestion in filteredSuggestions"
           :key="suggestion"
           @click="selectSuggestion(suggestion)"
         >
@@ -23,6 +25,7 @@
     </div>
   </div>
 </template>
+
 <script>
 export default {
   name: "StepLocation",
@@ -30,7 +33,16 @@ export default {
     return {
       location: "",
       suggestions: ["Bahia", "Ceará", "Paraíba"],
+      showSuggestions: false,
     };
+  },
+  computed: {
+    filteredSuggestions() {
+      if (!this.location) return this.suggestions;
+      return this.suggestions.filter((s) =>
+        s.toLowerCase().includes(this.location.toLowerCase())
+      );
+    },
   },
   watch: {
     location() {
@@ -39,12 +51,18 @@ export default {
   },
   methods: {
     validate() {
-      const isValid = this.location;
-      this.$emit("validate", isValid);
+      if (this.location) {
+        this.$emit("validate", true);
+      }
     },
     selectSuggestion(suggestion) {
       this.location = suggestion;
-    }
-  }
+      this.showSuggestions = false;
+      this.validate();
+    },
+    hideSuggestions() {
+      setTimeout(() => (this.showSuggestions = false), 200);
+    },
+  },
 };
 </script>
