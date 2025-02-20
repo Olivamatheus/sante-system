@@ -90,12 +90,12 @@ export default {
     toggleExamSelection(exam) {
       const index = this.selectedExams.indexOf(exam);
       if (index > -1) {
-        this.selectedExams.splice(index, 1); // Remove o exame
+        this.selectedExams.splice(index, 1); 
       } else {
-        this.selectedExams.push(exam); // Adiciona o exame
+        this.selectedExams.push(exam); 
       }
     },
-    // Função para continuar com o agendamento (pode redirecionar ou processar dados)
+    // Continuar com o agendamento
     continueScheduling() {
       if (this.selectedExams) {
         this.$emit("validate", true);
@@ -105,7 +105,7 @@ export default {
     },
   },
   mounted() {
-    this.filteredExams = this.exams; // Inicializa com todos os exames
+    this.filteredExams = this.exams; 
   },
 };
 </script>

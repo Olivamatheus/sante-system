@@ -45,4 +45,9 @@ body {
   -webkit-tap-highlight-color: transparent;
   tap-highlight-color: transparent;
 }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 </style>
